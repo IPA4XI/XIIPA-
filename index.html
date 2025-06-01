@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas XI IPA 4 | Informasi Kelas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a081f, #1c1845, #0a081f);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Space Background Elements */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(0.5px);
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
+            animation: glowPlanet 4s infinite alternate;
+        }
+
+        @keyframes glowPlanet {
+            0% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+            100% { box-shadow: 0 0 40px rgba(255,255,255,0.4); }
+        }
+
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+            z-index: -1;
+            animation: pulseNebula 8s infinite ease-in-out;
+        }
+
+        @keyframes pulseNebula {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .galaxy {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.3;
+            z-index: -1;
+            animation: glowGalaxy 6s infinite alternate;
+        }
+
+        @keyframes glowGalaxy {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 50px rgba(161, 196, 253, 0.8),
+                0 0 100px rgba(255, 154, 158, 0.6);
+            position: relative;
+            z-index: 20;
+            animation: pulseLogo 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseLogo {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(161, 196, 253, 0.8); }
+            50% { transform: scale(1.05); box-shadow: 0 0 70px rgba(161, 196, 253, 1); }
+        }
+
+        .logo i {
+            font-size: 3.5rem;
+            color: #0f0c29;
+            animation: pulseIcon 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(161, 196, 253, 0.7);
+            letter-spacing: 4px;
+            position: relative;
+            display: inline-block;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px rgba(161, 196, 253, 0.5); }
+            100% { text-shadow: 0 0 40px rgba(255, 154, 158, 0.8), 0 0 60px rgba(194, 233, 251, 0.6); }
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff9a9e, #a1c4fd, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(161, 196, 253, 0.5);
+            animation: pulseLine 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseLine {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #d1d1ff;
+            max-width: 600px;
+            margin: 30px auto 0;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: rgba(20, 20, 50, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(161, 196, 253, 0.1);
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 15;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 15px 40px rgba(161, 196, 253, 0.6),
+                0 0 50px rgba(255, 154, 158, 0.4);
+            border: 1px solid rgba(161, 196, 253, 0.5);
+        }
+
+        .card-header {
+            padding: 30px;
+            background: linear-gradient(90deg, rgba(161, 196, 253, 0.4), rgba(255, 154, 158, 0.4));
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-right: 20px;
+            background: linear-gradient(135deg, #ff9a9e, #a1c4fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(161, 196, 253, 0.7);
+            animation: pulseIcon 3s infinite ease-in-out;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            z-index: 2;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), padding 0.8s ease;
+        }
+
+        .card.active .card-content {
+            padding: 30px;
+            max-height: 1000px;
+        }
+
+        /* Content Styles */
+        .wali-content {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .wali-name {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ff9a9e, #a1c4fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(161, 196, 253, 0.5);
+        }
+
+        .wali-title {
+            font-size: 1.4rem;
+            color: #d1d1ff;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .structure-list {
+            list-style: none;
+        }
+
+        .structure-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideIn 0.5s ease-out;
+            animation-fill-mode: both;
+            font-size: 1.1rem;
+        }
+
+        .structure-item:last-child {
+            border-bottom: none;
+        }
+
+        .structure-role {
+            font-weight: 600;
+            color: #ff9a9e;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 0 10px rgba(255, 154, 158, 0.4);
+        }
+
+        .structure-role i {
+            margin-right: 10px;
+            color: #a1c4fd;
+            text-shadow: 0 0 10px rgba(161, 196, 253, 0.5);
+        }
+
+        .structure-name {
+            text-align: right;
+            color: #fad0c4;
+            font-weight: 500;
+            text-shadow: 0 0 8px rgba(250, 208, 196, 0.3);
+        }
+
+        .piket-day {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #c2e9fb;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(194, 233, 251, 0.4);
+            display: flex;
+            align-items: center;
+            text-shadow: 0 0 10px rgba(194, 233, 251, 0.3);
+        }
+
+        .day-title i {
+            margin-right: 15px;
+            color: #ff9a9e;
+            text-shadow: 0 0 10px rgba(255, 154, 158, 0.5);
+        }
+
+        .piket-names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .name-badge {
+            background: linear-gradient(135deg, rgba(161, 196, 253, 0.3), rgba(255, 154, 158, 0.3));
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: pulseBadge 4s infinite ease-in-out;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(161, 196, 253, 0.4); }
+        }
+
+        .name-badge:hover {
+            background: linear-gradient(135deg, rgba(255, 154, 158, 0.5), rgba(194, 233, 251, 0.5));
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.5);
+            z-index: 5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #a0a0d0;
+            font-size: 1.1rem;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 20px 20px 0 0;
+            backdrop-filter: blur(5px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .card-title {
+                font-size: 1.7rem;
+            }
+            
+            .logo {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .logo i {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Space Background -->
+    <div class="space-bg" id="space-bg"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-atom"></i>
+                </div>
+            </div>
+            <h1>KELAS XI IPA 4</h1>
+            <p class="subtitle">Struktur Kelas dan Jadwal Piket</p>
+        </header>
+
+        <div class="cards-container">
+            <!-- Wali Kelas Card -->
+            <div class="card" id="wali-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <h2 class="card-title">Wali Kelas</h2>
+                </div>
+                <div class="card-content">
+                    <div class="wali-content">
+                        <div class="wali-name">Pak Luqman</div>
+                        <p class="wali-title">Wali Kelas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Struktur Kelas Card -->
+            <div class="card" id="struktur-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h2 class="card-title">Struktur Kelas</h2>
+                </div>
+                <div class="card-content">
+                    <ul class="structure-list">
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-crown"></i> Ketua</span>
+                            <span class="structure-name">Khoirul Fatikin</span>
+                        </li>
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-star"></i> Wakil Ketua</span>
+                            <span class="structure-name">Farel Adi Tri Fariza</span>
+                        </li>
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-coins"></i> Bendahara</span>
+                            <span class="structure-name">Salwa Salsabila</span>
+                        </li>
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-pen"></i> Sekretaris 1</span>
+                            <span class="structure-name">Indriyani Putri</span>
+                        </li>
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-pen-alt"></i> Sekretaris 2</span>
+                            <span class="structure-name">Maisaroh</span>
+                        </li>
+                        <li class="structure-item">
+                            <span class="structure-role"><i class="fas fa-shield-alt"></i> Keamanan</span>
+                            <span class="structure-name">Khairil Dani Pratama</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Piket Card -->
+            <div class="card" id="piket-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-star"></i>
+                    </div>
+                    <h2 class="card-title">Jadwal Piket</h2>
+                </div>
+                <div class="card-content">
+                    <div class="piket-day">
+                        <h3 class="day-title"><i class="fas fa-sun"></i> Senin</h3>
+                        <div class="piket-names">
+                            <span class="name-badge" style="--i:0">Ainun Nadhifah</span>
+                            <span class="name-badge" style="--i:1">Aksania Muna</span>
+                            <span class="name-badge" style="--i:2">Alaisya Syalsabila</span>
+                            <span class="name-badge" style="--i:3">Alimatul Azizah</span>
+                            <span class="name-badge" style="--i:4">Aryani Puspaningrum</span>
+                        </div>
+                    </div>
+
+                    <div class="piket-day">
+                        <h3 class="day-title"><i class="fas fa-cloud-sun"></i> Selasa</h3>
+                        <div class="piket-names">
+                            <span class="name-badge" style="--i:0">Asifati Aza</span>
+                            <span class="name-badge" style="--i:1">Bunga Mutiara Sari</span>
+                            <span class="name-badge" style="--i:2">Dwi Anggraini</span>
+                            <span class="name-badge" style="--i:3">Farel Adi Tri Fariza</span>
+                            <span class="name-badge" style="--i:4">Indriyani Putri</span>
+                        </div>
+                    </div>
+
+                    <div class="piket-day">
+                        <h3 class="day-title"><i class="fas fa-cloud-moon"></i> Rabu</h3>
+                        <div class="piket-names">
+                            <span class="name-badge" style="--i:0">Kayla Khotrun Nada</span>
+                            <span class="name-badge" style="--i:1">Kahiril Dani Pratama</span>
+                            <span class="name-badge" style="--i:2">Khasna Fauqiyah</span>
+                            <span class="name-badge" style="--i:3">Laura Natasya</span>
+                            <span class="name-badge" style="--i:4">Liza Khoirunisa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>By XI IPA 4 | ©2024/2025</p>
+        <p>Dibuat dengan <i class="fas fa-heart" style="color:#ff9a9e;"></i> | Tema Luar Angkasa Colorful</p>
+    </footer>
+
+    <script>
+        // Create space background elements
+        function createSpaceBackground() {
+            const spaceBg = document.getElementById('space-bg');
+            
+            // Create nebula clouds
+            const nebulaColors = [
+                'radial-gradient(circle, rgba(161,196,253,0.6) 0%, transparent 70%)',
+                'radial-gradient(circle, rgba(255,154,158,0.5) 0%, transparent 70%)',
+                'radial-gradient(circle, rgba(194,233,251,0.5) 0%, transparent 70%)',
+                'radial-gradient(circle, rgba(250,208,196,0.4) 0%, transparent 70%)'
+            ];
+            
+            for (let i = 0; i < 6; i++) {
+                const nebula = document.createElement('div');
+                nebula.classList.add('nebula');
+                const size = Math.random() * 600 + 400;
+                nebula.style.width = `${size}px`;
+                nebula.style.height = `${size}px`;
+                nebula.style.left = `${Math.random() * 100}%`;
+                nebula.style.top = `${Math.random() * 100}%`;
+                nebula.style.background = nebulaColors[Math.floor(Math.random() * nebulaColors.length)];
+                spaceBg.appendChild(nebula);
+            }
+            
+            // Create galaxies
+            for (let i = 0; i < 4; i++) {
+                const galaxy = document.createElement('div');
+                galaxy.classList.add('galaxy');
+                galaxy.style.width = `${Math.random() * 400 + 200}px`;
+                galaxy.style.height = `${Math.random() * 400 + 200}px`;
+                galaxy.style.left = `${Math.random() * 100}%`;
+                galaxy.style.top = `${Math.random() * 100}%`;
+                galaxy.style.background = 'radial-gradient(circle, rgba(161,196,253,0.4), transparent 70%)';
+                spaceBg.appendChild(galaxy);
+            }
+            
+            // Create stars
+            for (let i = 0; i < 300; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.setProperty('--duration', `${Math.random() * 4 + 1}s`);
+                spaceBg.appendChild(star);
+            }
+            
+            // Create planets
+            const planets = [
+                { size: 120, color: 'radial-gradient(circle, #ff9a9e, #ff6b6b)', top: '5%', left: '10%' },
+                { size: 70, color: 'radial-gradient(circle, #a1c4fd, #4d79ff)', top: '75%', left: '85%' },
+                { size: 90, color: 'radial-gradient(circle, #c2e9fb, #89f7fe)', top: '25%', left: '90%' },
+                { size: 60, color: 'radial-gradient(circle, #fad0c4, #ffafbd)', top: '65%', left: '3%' },
+                { size: 50, color: 'radial-gradient(circle, #d4fc79, #96e6a1)', top: '15%', left: '75%' }
+            ];
+            
+            planets.forEach(planet => {
+                const planetEl = document.createElement('div');
+                planetEl.classList.add('planet');
+                planetEl.style.width = `${planet.size}px`;
+                planetEl.style.height = `${planet.size}px`;
+                planetEl.style.background = planet.color;
+                planetEl.style.top = planet.top;
+                planetEl.style.left = planet.left;
+                spaceBg.appendChild(planetEl);
+                
+                // Add moons to some planets
+                if (Math.random() > 0.5) {
+                    const moon = document.createElement('div');
+                    moon.style.position = 'absolute';
+                    moon.style.width = `${planet.size / 4}px`;
+                    moon.style.height = `${planet.size / 4}px`;
+                    moon.style.background = 'radial-gradient(circle, #ddd, #aaa)';
+                    moon.style.borderRadius = '50%';
+                    moon.style.top = `${planet.size / 3}px`;
+                    moon.style.left = `${planet.size * 1.5}px`;
+                    moon.style.boxShadow = '0 0 10px rgba(255,255,255,0.5)';
+                    moon.style.animation = 'glowPlanet 3s infinite alternate';
+                    planetEl.appendChild(moon);
+                }
+            });
+        }
+        
+        // Card toggle functionality
+        function setupCardToggles() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Close other cards
+                    cards.forEach(otherCard => {
+                        if (otherCard !== card && otherCard.classList.contains('active')) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createSpaceBackground();
+            setupCardToggles();
+            
+            // Open first card by default
+            document.getElementById('wali-card').classList.add('active');
+        });
+    </script>
+</body>
+</html>
